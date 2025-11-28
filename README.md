@@ -160,12 +160,15 @@ Beyond constructing inputs, the repository also **runs the Coibion–Gorodnichen
    - The resulting structural shocks are extracted as a **time series of technology shocks**
 
 3. **Extended Sample**  
-   - Because all inputs come from up-to-date FRED data, the estimated shocks naturally extend beyond the original sample of the published papers, allowing for analysis on more recent data
+   - ***Sample Restriction and Truncation for Model Compatibility***
+   -  An initial **start date** is imposed (e.g., a given quarter in the late 1960s) to match the original empirical design and avoid early periods with missing or poorly measured data
+   -  The transformed FRED sample is, in principle, longer than what the original Coibion–Gorodnichenko MATLAB script expects. However, their MATLAB implementation uses **pre-defined matrices with a fixed number of observations** (for example, pre-specified coefficient and residual matrices)
+   -   To maintain **full compatibility** with that script, the updated Galidata input is therefore **explicitly cut/truncated** so that the resulting VAR input matrix has **exactly the same dimension** as in the Coibion–Gorodnichenko code.
 
 4. **Exported Final Series**  
    - The final products include:
-     - An updated **oil shock series** (Hamilton/CG-style)  
-     - An updated **technology shock series** (Galí/CG-style)  
+     - An updated **oil shock series** (Hamilton)  
+     - An updated **technology shock series** (Galí)  
    - These are saved in formats such as MATLAB `.m` files and/or `.csv` files, with clear labels, ready to be merged onto other datasets
 
 ---
