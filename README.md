@@ -1,4 +1,4 @@
-# Macro Shock Controls: Oil & Technology Shocks (CG-Style)
+# Macro Shock Controls: Oil & Technology Shocks
 
 
 This repository builds and updates **macro shocks** according to:
