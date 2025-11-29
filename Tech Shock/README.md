@@ -13,36 +13,37 @@ The updated series:
 
 ## 1. Data Construction (Galidata-Style Inputs)
 
-The technology shock inputs follow Galí (1999) and Coibion–Gorodnichenko (2012) and are based on three quarterly FRED series for the **nonfarm business sector**:
+The technology shock inputs follow Galí (1999) and Coibion and Gorodnichenko (2012) and are based on three quarterly FRED series for the **nonfarm business sector**:
 
-- Labor productivity (output per hour), typically denoted \( Y_t^* \) (from OPHNFB).  
-- Hours worked, denoted \( H_t \) (from HOANBS).  
-- The GDP deflator, denoted \( P_t \) (from GDPDEF).
+- Labor productivity (output per hour), denoted $\( Y_t^* \)$ (from OPHNFB).  
+- Hours worked, denoted $\( H_t \)$ (from HOANBS).  
+- The GDP deflator, denoted $\( P_t \)$ (from GDPDEF).
 
 From these, the Galí-style VAR uses **quarterly log differences multiplied by 100**:
 
 - Productivity growth:
-  \[
-  \Delta y_t = 100 \big( \log Y_t^* - \log Y_{t-1}^* \big),
-  \]
+
+  $$\Delta y_t = 100 \big( \log Y_t^* - \log Y_{t-1}^* \big)$$
+
+  
 - Hours growth:
-  \[
-  \Delta h_t = 100 \big( \log H_t - \log H_{t-1} \big),
-  \]
+  
+  $$\Delta h_t = 100 \big( \log H_t - \log H_{t-1} \big)$$
+  
 - Inflation:
-  \[
-  \pi_t = 100 \big( \log P_t - \log P_{t-1} \big).
-  \]
+
+$$\pi_t = 100 \big( \log P_t - \log P_{t-1} \big)$$
 
 These three variables form the VAR state vector:
-\[
+
+$$
 x_t =
 \begin{bmatrix}
 \Delta y_t \\
 \Delta h_t \\
 \pi_t
-\end{bmatrix}.
-\]
+\end{bmatrix}
+$$
 
 An initial **start date** (e.g., a quarter in the late 1960s) is imposed to:
 
@@ -57,12 +58,12 @@ The transformed series are saved and then used to build the **VAR input matrix**
 
 ### 2.1 VAR Framework
 
-The triplet \( (\Delta y_t, \Delta h_t, \pi_t) \) is used in a VAR model that follows:
+The triplet $\( (\Delta y_t, \Delta h_t, \pi_t) \)$ is used in a VAR model that follows:
 
 - The structure in **Galí (1999)**, and  
 - The implementation in **Coibion & Gorodnichenko (2012)**.
 
-A reduced-form VAR is estimated in the vector \( x_t \). Technology shocks are identified using **long-run restrictions**, typically:
+A reduced-form VAR is estimated in the vector $\( x_t \)$. Technology shocks are identified using **long-run restrictions**, typically:
 
 - **Technology shocks** are defined as structural innovations that have a **permanent effect** on labor productivity.  
 - **Non-technology shocks** are restricted so that they do **not** generate a permanent shift in the level of productivity (or follow a specified long-run pattern).
@@ -86,8 +87,8 @@ To maintain **full compatibility** with the original VAR implementation:
 
 Thus:
 
-- `gali_cut` is the **actual input** to the VAR model in this project.  
-- The VAR specification and identification scheme are **unchanged**; only the underlying data vector \( x_t \) is updated and truncated to fit the fixed matrix structure.
+- `gali_cut` is the **actual input** to the VAR model in this project
+- The VAR specification and identification scheme are **unchanged**; only the underlying data vector $\( x_t \)$ is updated and truncated to fit the fixed matrix structure
 
 Running the original VAR on `gali_cut` yields an updated **technology shock series** that is consistent with the original paper but incorporates more recent data (to the extent allowed by the fixed sample length and matrix design).
 
