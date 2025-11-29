@@ -50,6 +50,16 @@ The end result is a set of time series that can be merged with other datasets an
 
 ---
 
+## Final Series
+
+<p align="center">
+  <img src="Oil%20Shock/Graphs/hamilton_wti_shocks.png" alt="Hamilton WTI oil shocks" width="400">
+  &nbsp;&nbsp;
+  <img src="Tech%20Shock/Graphs/Gali_tech_shocks.png" alt="Galí technology shocks" width="400">
+</p>
+
+---
+
 ## Use Cases for Macro Shock Series
 
 The core purpose of these series is to provide **macro shock controls** for other empirical work. Typical use cases include:
