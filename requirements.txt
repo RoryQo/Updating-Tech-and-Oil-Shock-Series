@@ -1,0 +1,15 @@
+# R runtime
+R>=4.4.0
+
+# Required R packages
+fredr
+quantmod
+zoo
+tidyr
+ggplot2
+lubridate
+dplyr
+tidyverse
+broom
+R.matlab
+its.analysis
