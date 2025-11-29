@@ -157,40 +157,19 @@ Beyond constructing inputs, the repository also **runs the Coibion–Gorodnichen
    1. The triplet $(\Delta y_t, \Delta h_t, \pi_t)$ is used in a VAR framework that follows Galí (1999) and Coibion–Gorodnichenko’s implementation:  
       - A VAR is estimated in these variables.  
       - Long-run restrictions are used to identify **technology shocks** as the structural innovations that have a permanent effect on productivity but no long-run effect on hours (or with a specified pattern of long-run responses, depending on the exact identification scheme).  
-   2. The resulting structural shocks are extracted as a **time series of technology shocks**.
-
-   2.A **Extended Sample**  
-   1. *Sample Restriction and Truncation for Model Compatibility*  
-      - An initial **start date** is imposed (e.g., a given quarter in the late 1960s) to match the original empirical design and avoid early periods with missing or poorly measured data.  
-      - The transformed FRED sample is, in principle, longer than what the original Coibion–Gorodnichenko MATLAB script expects. However, their MATLAB implementation uses **pre-defined matrices with a fixed number of observations** (for example, pre-specified coefficient and residual matrices).  
-      - To maintain **full compatibility** with that script, the updated Galidata input is therefore **explicitly cut/truncated** so that the resulting VAR input matrix has **exactly the same dimension** as in the Coibion–Gorodnichenko code.
-
-   2.B **MATLAB Implementation Notes**  
-   1. The `MATLAB` folder contains the original replication functions from *“What Can Survey Forecasts Tell Us about Information Rigidities?”* (Coibion & Gorodnichenko, 2012, JPE).  
-   2. The custom `create_shocks` file relies on these auxiliary functions to run the VAR model; if trying to replicate, ensure they are available in the same working directory.
-
-4. **Exported Final Series**  
-   - The final products include:
-     - An updated **oil shock series** (Hamilton)  
-     - An updated **technology shock series** (Galí)  
-   - These are saved in formats such as MATLAB `.m` files and/or `.csv` files, with clear labels, ready to be merged onto other datasets
+   2. The resulting structural shocks are extracted as a **time series of technology shocks**
+   3. **Please see Tech Shock Folder for full workflow and details**
 
 
 ---
 
-## Use as Macro Controls in Regressions
+## Use Cases for Macro Shock Series
 
 The core purpose of these series is to provide **macro shock controls** for other empirical work. Typical use cases include:
 
 - Adding oil shocks and technology shocks as regressors in **forecast-error regressions**, to control for macro disturbances that may drive both forecasts and realizations  
 - Including shocks as exogenous controls in **VARs, panel regressions, or local projections**, especially when focusing on other structural shocks or policy variables  
 - Using the series as **robustness controls** to ensure that estimated effects are not driven by unmodeled oil or technology shocks
-
-Conceptually, you:
-
-1. Map your dataset to a quarterly frequency and construct a quarterly date variable 
-2. Merge the shock series by quarter (date or quarter index)
-3. Include the shocks as additional regressors or exogenous variables in your preferred econometric specification
 
 Because the construction closely tracks Coibion–Gorodnichenko and Galí, the resulting series are **directly interpretable** in that framework
 
@@ -201,26 +180,13 @@ Because the construction closely tracks Coibion–Gorodnichenko and Galí, the r
 - **R version:** 4.4.0 or later  
 - Required R packages include:
   - `fredr`, `quantmod`, `zoo`, `tidyr`, `ggplot2`,  
-  - `lubridate`, `dplyr`, `tidyverse`, `broom`,  
+  - `lubridate`, `dplyr`, `tidyverse`, `broom`, `R.matlab` 
   - and any additional packages used for time-series analysis (e.g., `its.analysis` or similar)
 
 - A **FRED API key** is required to download data programmatically  
   - The key should be set in the R environment before running the scripts  
   - For reproducibility and security, the key should be stored outside of version control (e.g., in an environment file)
 
----
-
-## Workflow Summary
-
-1. **Construct Oil Price Shocks**  
-   - Run `oil_shock_param_creation.R` to obtain Hamilton-style NOPI shocks in MATLAB-ready format
-
-2. **Construct Technology Shock Inputs**  
-   - Run `create_data_Galidata_m.R` to obtain the transformed variables \((\Delta y_t, \Delta h_t, \pi_t)\) in a CSV file
-
-3. **Estimate Models and Extract Shocks**  
-   - Use MATLAB or R scripts that replicate Coibion–Gorodnichenko’s modeling approach to estimate VARs and related structures 
-   - Identify the structural shocks and export them as final series
 
 ---
 
