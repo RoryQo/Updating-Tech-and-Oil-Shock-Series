@@ -1,4 +1,4 @@
-# Updating Coibion–Gorodnichenko Technology Shocks
+# Updating Coibion Gorodnichenko Technology Shocks
 
 This directory reconstructs and updates the **technology shock series** used in  
 Coibion & Gorodnichenko (2012, JPE), *“What Can Survey Forecasts Tell Us about Information Rigidities?”*  
