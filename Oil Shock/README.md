@@ -1,4 +1,4 @@
-## Hamilton Oil Price Shocks
+## Updating Coibion Gorodnichenko Oil Price Shock Series
 
 This folder contains Hamilton-style oil price shock series constructed from crude oil prices and aggregated to the quarterly frequency
 
