@@ -11,7 +11,7 @@ Thor=(1969:.25:2025.25)';
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 % trivariate VAR
-data_Galidata              % loads US quarterly data for tech VARs, 1951:2 until 2007:3
+data_Gali_cut            % loads US quarterly data for tech VARs, 1969 until 2025
 dataX=[dyn dh pi];
 % dataX=dataX(21:end,:);
 
@@ -26,5 +26,6 @@ for i1=1:length(techshocks_Gali0)
 end
 
 techshocks_GaliM=techshocks_Gali3;
+
 
 
