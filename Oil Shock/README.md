@@ -1,4 +1,4 @@
-## Updating Coibion Gorodnichenko Oil Price Shock Series
+<h1 align="center">Updating Coibion Gorodnichenko Oil Price Shock Series</h1>
 
 <p align="center">
   <a href="https://github.com/RoryQo/Updating-Tech-and-Oil-Shock-Series/raw/main/Oil%20Shock/Shock%20Series/shocks_oil_prices.m">
