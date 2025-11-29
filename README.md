@@ -1,5 +1,15 @@
-# Macro Shock Series: Oil & Technology
+<h1 align="center">Macro Shock Series: Oil &amp; Technology</h1>
 
+
+<p align="center">
+  <a href="https://github.com/RoryQo/Updating-Tech-and-Oil-Shock-Series/raw/main/Oil%20Shock/Shock%20Series/shocks_oil_prices.m">
+    <img src="https://img.shields.io/static/v1?label=Download&message=Oil%20Price%20Shock%20Series&color=blue&logo=github&logoColor=white" alt="Download shocks_oil_prices.m">
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/RoryQo/Updating-Tech-and-Oil-Shock-Series/raw/main/Tech%20Shock/Tech%20Shock%20Series/tech_shocks_50-25.csv">
+    <img src="https://img.shields.io/static/v1?label=Download&message=Tech%20Shock%20Series&color=blue&logo=github&logoColor=white" alt="Download tech_shocks_50-25.csv">
+  </a>
+</p>
 
 This repository builds and updates **macro shocks** according to:
 
@@ -15,17 +25,6 @@ The project:
 These series are intended for researchers who want **consistent macro controls** in their own regressions (e.g., forecast error regressions, VARs, panel models, etc.).
 
 
-<p align="center">
-  <a href="https://github.com/RoryQo/Updating-Tech-and-Oil-Shock-Series/raw/main/Oil%20Shock/Shock%20Series/shocks_oil_prices.m">
-    <img src="https://img.shields.io/static/v1?label=Download&message=Oil%20Price%20Shock%20Series&color=blue&logo=github&logoColor=white" alt="Download shocks_oil_prices.m">
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/RoryQo/Updating-Tech-and-Oil-Shock-Series/raw/main/Tech%20Shock/Tech%20Shock%20Series/tech_shocks_50-25.csv">
-    <img src="https://img.shields.io/static/v1?label=Download&message=Tech%20Shock%20Series&color=blue&logo=github&logoColor=white" alt="Download tech_shocks_50-25.csv">
-  </a>
-</p>
 
 ---
 
@@ -47,6 +46,8 @@ Separate scripts (e.g., in MATLAB or R) take the constructed data and:
 - Export **final shock series** on the extended sample
 
 The end result is a set of time series that can be merged with other datasets and used directly as **macro control variables**.
+
+**(For more methodological and workflow details, please visit each shock's respective folder)**
 
 ---
 
@@ -73,6 +74,8 @@ Because the construction closely tracks Coibion–Gorodnichenko and Galí, the r
 ---
 
 ## Requirements and Setup
+
+(Reference `requirements.txt`)
 
 - **R version:** 4.4.0 or later  
 - Required R packages include:
