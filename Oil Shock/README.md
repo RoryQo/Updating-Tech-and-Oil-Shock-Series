@@ -1,5 +1,16 @@
 ## Updating Coibion Gorodnichenko Oil Price Shock Series
 
+<p align="center">
+  <a href="https://github.com/RoryQo/Updating-Tech-and-Oil-Shock-Series/raw/main/Oil%20Shock/Shock%20Series/shocks_oil_prices.m">
+    <img src="https://img.shields.io/static/v1?label=Download&message=Oil%20Price%20Shock%20Series%20(WTI-1986-present)&color=blue&logo=github&logoColor=white" alt="Download shocks_oil_prices.m">
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/RoryQo/Updating-Tech-and-Oil-Shock-Series/raw/main/Oil%20Shock/Shock%20Series/shocks_oil_price_historic.m">
+    <img src="https://img.shields.io/static/v1?label=Download&message=Oil%20Price%20Shock%20Series%20(historic%20WTI-1946-present)&color=blue&logo=github&logoColor=white" alt="Download shocks_oil_price_historic.m">
+  </a>
+</p>
+
+
 This folder contains Hamilton-style oil price shock series constructed from crude oil prices and aggregated to the quarterly frequency
 
 
