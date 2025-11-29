@@ -10,29 +10,55 @@ The updated series:
 - Produce **updated technology shocks** that are consistent with the original paper but extended with more recent data
 
 ---
+## Gali Data (Input)
 
-## 1. Data Construction (Galidata Inputs)
+**Script:** `create_data_Galidata_m.R`  
 
-The technology shock inputs follow Galí (1999) and Coibion and Gorodnichenko (2012) and are based on three quarterly FRED series for the **nonfarm business sector**:
+### Data Sources
 
-- Labor productivity (output per hour), denoted $\( Y_t^* \)$ (from OPHNFB) 
-- Hours worked, denoted $\( H_t \)$ (from HOANBS)
-- The GDP deflator, denoted $\( P_t \)$ (from GDPDEF)
+The technology shock construction uses three FRED series for the **nonfarm business sector**:
 
-From these, the Galí VAR uses **quarterly log differences multiplied by 100**:
+- **Labor productivity (output per hour)** —  `OPHNFB`
+- **Hours worked** — `HOANBS` 
+- **GDP deflator** — `GDPDEF`
 
-- Productivity growth:
+These are obtained at a quarterly frequency
 
-  $$\Delta y_t = 100 \big( \log Y_t^* - \log Y_{t-1}^* \big)$$
+### Key Transformations
 
-  
-- Hours growth:
-  
-  $$\Delta h_t = 100 \big( \log H_t - \log H_{t-1} \big)$$
-  
-- Inflation:
+1. **Base Variables**  
+   - The raw levels are interpreted as:
+     - $\( Y_t^* \)$: output per hour (labor productivity)
+     - $\( H_t \)$: hours worked
+     - $\( P_t \)$: GDP deflator
 
-$$\pi_t = 100 \big( \log P_t - \log P_{t-1} \big)$$
+2. **Log Differences (Growth Rates and Inflation)**  
+   - the Galí VAR uses **quarterly log differences multiplied by 100**:
+     - Productivity growth:
+
+       $$\Delta y_t = 100 \left( \log Y_t^* - \log Y_{t-1}^* \right)$$
+
+     - Hours growth:
+     
+       $$\Delta h_t = 100 \left( \log H_t - \log H_{t-1} \right)$$
+
+      - Inflation:
+     
+       $$\pi_t = 100 \left( \log P_t - \log P_{t-1} \right)$$
+
+
+   - These correspond to **percentage growth rates** for productivity and hours, and **annualized-percent inflation** (on a quarterly basis).
+
+### Output
+
+The transformed data are saved as a CSV file (e.g., `Tech_shock_initial_training_data_cut.csv`), containing:
+
+- A quarterly date variable.  
+- The three key variables:
+  - $\( \Delta y_t \)$ (often denoted `dyn`) 
+  - $\( \Delta h_t \)$ (often denoted `dh`)  
+  - $\( \pi_t \)$ (often denoted `pi`)
+
 
 These three variables form the VAR state vector:
 
@@ -45,11 +71,8 @@ x_t =
 \end{bmatrix}
 $$
 
-An initial **start date** (e.g., a quarter in the late 1960s) is imposed to:
 
-- Match the original empirical matrices  
-
----
+This CSV serves as the **input dataset** for the VAR that identifies **technology shocks** using Galí’s methodology.
 
 ## 2. VAR Model and Technology Shock Identification
 
