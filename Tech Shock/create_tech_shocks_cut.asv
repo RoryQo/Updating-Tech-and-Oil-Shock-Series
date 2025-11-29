@@ -7,7 +7,7 @@ Thor=(1951:.25:2007.75)';
 
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-%    1- Tech shocks: Gali
+%    1- Tech shocks: Gali (original data file from replication package)
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 % trivariate VAR
@@ -26,4 +26,5 @@ for i1=1:length(techshocks_Gali0)
 end
 
 techshocks_GaliM=techshocks_Gali3;
+
 
