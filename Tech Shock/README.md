@@ -9,6 +9,12 @@ The updated series:
 - Feed a **updated dataset** into the **original VAR model** from the paper's replication code
 - Produce **updated technology shocks** that are consistent with the original paper but extended with more recent data
 
+<p align="center">
+  <a href="https://github.com/RoryQo/Updating-Tech-and-Oil-Shock-Series/raw/main/Tech%20Shock/Tech%20Shock%20Series/tech_shocks_50-25.csv">
+    <img src="https://img.shields.io/static/v1?label=Download&message=Tech%20Shock%20Series&color=blue&logo=github&logoColor=white" alt="Download tech_shocks_50-25.csv">
+  </a>
+</p>
+
 ---
 ## Technology Shock Inputs (Gali)
 
