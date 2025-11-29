@@ -10,7 +10,7 @@ The updated series:
 - Produce **updated technology shocks** that are consistent with the original paper but extended with more recent data
 
 ---
-## Gali Data (Input)
+## Technology Shock Inputs (Gali)
 
 **Script:** `create_data_Galidata_m.R`  
 
