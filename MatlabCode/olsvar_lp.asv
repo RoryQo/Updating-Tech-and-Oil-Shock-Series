@@ -1,0 +1,32 @@
+% OLSVARC.M
+% Lutz Kilian
+% University of Michigan
+% April 1997
+%
+% This program estimates a level VAR with intercept in companion format by LS
+
+function [A,cov_slopes]=olsvar_lp(y,p,q,lead_h);
+
+[t,q]=size(y);
+y=y';
+
+Y=y(:,p:t-lead_h);
+for i=1:p-1
+    Y=[Y; y(:,p-i:t-i-lead_h)];
+end;
+
+X=[ones(1,t-p-lead_h); Y(:,1:t-p-lead_h)];
+Y1=y(:,t-length(X(1,:))+1:t);
+%size(Y)
+A=(Y1*X')/(X*X');
+
+U=Y1-A*X;
+SIGMA=U*U'/(length(Y)-p-p*q-1);
+A=A(:,2:q+1);     %slopes
+
+% Yuriy (June 3, 2011): compute the covariance matrix of the estimates for slopes and
+% volatility of shocks
+
+cov_slopes=kron(inv(X*X'),SIGMA(1:q,1:q));
+cov_slopes=cov_slopes(q+1:2*q,q+1:2*q); % drop the terms that correspond to intercepts
+
