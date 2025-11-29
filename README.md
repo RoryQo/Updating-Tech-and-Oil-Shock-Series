@@ -1,4 +1,4 @@
-# Macro Shock Controls: Oil & Technology Shocks
+# Macro Shock Series: Oil & Technology
 
 
 This repository builds and updates **macro shocks** according to:
