@@ -30,7 +30,7 @@ These series are intended for researchers who want **consistent macro controls**
 
 Separate scripts (e.g., in MATLAB or R) take the constructed data and:
   
-- Estimate VAR models on productivity, hours, and inflation in order to identify **technology shocks** using Galí-style long-run restrictions. 
+- Estimate VAR models on productivity, hours, and inflation in order to identify **technology shocks** using Galí-style long-run restrictions
 - Export **final shock series** on the extended sample
 
 The end result is a set of time series that can be merged with other datasets and used directly as **macro control variables**.
