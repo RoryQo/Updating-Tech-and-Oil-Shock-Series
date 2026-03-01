@@ -28,7 +28,7 @@ lapply(pkgs, library, character.only = TRUE)
 
 
 # Set FRED api key
-fredr_set_key("80c548aefdb3b71a0e9abd87010be626")
+fredr_set_key("api_key")
 
 
 
@@ -93,5 +93,6 @@ df1$date <- as.Date(df1$date)
 df1 <- df1 %>% filter(date >= "1968-07-01")
 write.csv(df1, "Tech_shock_initial_training_data_cut.csv")
 # df1<- read.csv("C:\\Users\\roryq\\Downloads\\Tech_shock_initial_training_data.csv")
+
 
 
