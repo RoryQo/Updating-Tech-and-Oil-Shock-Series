@@ -29,7 +29,7 @@ lapply(pkgs, library, character.only = TRUE)
 
 
 # Set FRED api key
-fredr_set_key("80c548aefdb3b71a0e9abd87010be626")
+fredr_set_key("api_key")
 
 
 
@@ -149,6 +149,7 @@ lines_oilh <- c(
 
 # Write to file
 writeLines(lines_oilh, "shocks_oil_price_historic.m")
+
 
 
 
