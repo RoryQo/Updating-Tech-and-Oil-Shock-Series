@@ -13,8 +13,9 @@
 
 This repository builds and updates **macro shocks** according to:
 
-- Coibion & Gorodnichenko (2012, JPE), *What Can Survey Forecasts Tell Us about Information Rigidities?*  
-- Galí (1999, AER), *Technology, Employment, and the Business Cycle: Do Technology Shocks Explain Aggregate Fluctuations?*
+- Coibion & Gorodnichenko (2012, JPE), *What Can Survey Forecasts Tell Us about Information Rigidities?* View original code and paper: <a href="https://www.jstor.org/stable/10.1086/665662"><img style="vertical-align: middle;" src="https://img.shields.io/badge/ICPSR-555555?style=flat&logo=dataverse&logoColor=white" alt="ICPSR link" /></a>  
+
+- Galí (1999, AER), *Technology, Employment, and the Business Cycle: Do Technology Shocks Explain Aggregate Fluctuations?*  View: <a href="https://www.aeaweb.org/articles?id=10.1257/aer.89.1.249"><img style="vertical-align: middle;" src="https://img.shields.io/badge/ICPSR-555555?style=flat&logo=dataverse&logoColor=white" alt="ICPSR link" /></a>  
 
 The project:
 
